@@ -1,7 +1,7 @@
 greed_dice
 ==========
 
-$ ruby greed_game.rb player 1 name player 2 name ... player N name
+$ ruby greed_game.rb player_1 player_2 ... player_N
 
 = Playing Greed
 
