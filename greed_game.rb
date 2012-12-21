@@ -37,6 +37,7 @@ class Game
       next_player_index = 0 if next_player_index >= @players.length
       @current_player = @players[next_player_index]
     end
+    @@reactor.push_event(EndGameEvent.new(@players))
   end
 end
 

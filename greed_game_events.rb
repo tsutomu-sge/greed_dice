@@ -75,15 +75,15 @@ class StartGameEvent
 end
 
 class EndGameEvent
-  attr_reader :winner, :players
-  def initialize(winner, players)
-    @winner = winner
+  attr_reader :players
+  def initialize(players)
     @players = players
   end
 
   def show
-    puts "Victory goes to #{@winner.name}!"
-    View.show_scoreboard(@players.sort_by {|key, value| -value})
+    players_sorted = @players.sort {|a, b| b.score <=> a.score}
+    puts "Victory goes to #{players_sorted[0].name}!"
+    View.show_scoreboard(@players)
   end
 end
 
